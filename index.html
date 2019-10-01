@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>풀문 콘서트에 간 서희</title>
+	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+		body{overflow: hidden; }
+		h1{color: #C610E0; 
+			font-size: 11em; 
+			margin-top: 33%; 
+			margin-bottom: 0; 
+			line-height: 0.9em; 
+			font-family: 'Lobster', cursive;text-shadow: 4px 4px 8px #F3FF00; text-align: center;}
+
+		#div1{}
+		#div2{position: absolute;
+			margin-left: 18%; 
+			margin-top: 8.5%; 
+			width: 180px;}
+
+		#img1{margin:0; width: 20%; position: absolute; top: 25%; left: calc(50% - 140px);}
+		#buta:hover{color: #00FFFF;}
+
+		#butb{display: none; position: absolute; margin:0; width: 190px; top: 8%; right: 15%;}
+
+		.p{font-weight: bold; font-size: 1.2em;}
+		.p:hover{color: white;}
+
+		#p2{font-weight: bold; font-size: 1.2em;text-align: center; position: absolute; left: calc(50% - 70px); top: 75%; line-height: 1.8em; display: none;}
+
+		#box1 img{position: absolute; display: none;}
+		#box11{left: 30%; top: 60%;  width: 300px;}
+		#box12{left: 60%; top: 20%; width: 400px;}
+
+		#box2 img{position: absolute; display: none;}
+		#box21{left: 35%; top: 0%; width: 450px;}
+		#box22{left: 60%; top: 70%; width: 300px;}
+		
+		#box3 img{position: absolute; display: none;}
+		#box31{left: 82%; top: 55%; width: 300px;}
+		#box32{left: 40%; top: 40%; width: 300px;}
+		
+
+	</style>
+</head>
+<body>
+	<div>
+		<img src="main.jpg" id="img1">
+		<h1 id="buta">Full moon , Concert .</h1>
+	</div>
+
+
+	<div id="div1">	
+		<audio src="mu1.mp3" id="aa"></audio>
+		<img src="moon3.gif" id="butb">
+		<p id="p2">2019. 12 <br> 풀문 15년 뒤 이야기</p>
+	</div>
+
+
+	<div id="div2">
+		<p id="but1" class="p">01. My Self</p>
+		<p id="but2" class="p">02. Love Chronicle</p>
+		<p id="but3" class="p">03. Eternal Snow</p>
+
+		<audio src="mu2.mp3" id="bb"></audio>
+		<audio src="mu3.mp3" id="cc"></audio>
+		<audio src="mu4.mp3" id="dd"></audio>
+	</div>
+
+
+	<div id="box1">
+		<img src="luna.jpg" id="box11">
+		<img src="melloni2.jpg" id="box12">
+	</div>
+	<div id="box2">
+		<img src="gif2.gif" id="box21">
+		<img src="h1.jpg" id="box22">
+	</div>
+	<div id="box3">
+		<img src="tato.png" id="box31">
+		<img src="fullmoon.jpg" id="box32">
+	</div>
+
+
+	<script type="text/javascript">
+		buta.onclick = function(){
+			aa.play();
+			aa.volume = 0.7;
+			document.body.style.background ="url(gif5.gif)";
+			document.body.style.backgroundSize ="cover";
+			img1.style.display = "none";
+			butb.style.display = "block";
+			buta.style.display = "none";
+
+			but1.style.display = "none";
+			but2.style.display = "none";
+			but3.style.display = "none";
+
+			p2.style.display = "block";
+		}
+
+
+		butb.onclick = function(){
+			document.body.style.background ="url(gif4.gif)";
+			buta.style.display = "none";
+			butb.style.display = "none";
+
+			but1.style.display = "block";
+			but2.style.display = "block";
+			but3.style.display = "block";
+
+			p2.style.display = "none";
+		}
+
+
+		var astate = "off"; //꺼놓고
+		but1.onclick = function(){
+			if (astate == "off"){
+				aa.pause()
+				bb.play(); 
+				astate = "on";
+				but1.style.color = "white";
+				box21.style.display = "block";
+				box22.style.display = "block";
+			}else{ 
+				bb.pause(); 
+				astate = "off";
+				but1.style.color = "black";
+				box21.style.display = "none";
+				box22.style.display = "none";
+			}
+		}
+
+		bb.volume = 0.3;
+		var bstate = "off"; //꺼놓고
+		but2.onclick = function(){
+			if (bstate == "off"){ 
+				aa.pause();
+				cc.play(); 
+				bstate = "on";
+				but2.style.color = "white";
+				box11.style.display = "block";
+				box12.style.display = "block";
+			}else{ 
+				cc.pause(); 
+				bstate = "off";
+				but2.style.color = "black";
+				box11.style.display = "none";
+				box12.style.display = "none";
+			}
+		}
+
+
+		var cstate = "off"; //꺼놓고
+		but3.onclick = function(){
+			if (cstate == "off"){ 
+				aa.pause(); 
+				dd.play(); 
+				cstate = "on";
+				but3.style.color = "white";
+				box31.style.display = "block";
+				box32.style.display = "block";
+			}else{ 
+				dd.pause(); 
+				cstate = "off";
+				but3.style.color = "black";
+				box31.style.display = "none";
+				box32.style.display = "none";
+			}
+		}
+		
+
+	</script>
+
+</body>
+</html>
